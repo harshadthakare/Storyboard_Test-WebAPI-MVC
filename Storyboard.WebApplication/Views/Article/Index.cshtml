@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Storyboard.WebApplication.Models.ArticleViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Article", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tags)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleDesc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShortDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tags)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleDesc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit Article", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("View Article", "ViewArticle", new { id=item.Id }) |
+            @Html.ActionLink("Delete Article", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

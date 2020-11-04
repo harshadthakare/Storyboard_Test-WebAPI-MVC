@@ -1,0 +1,50 @@
+﻿@model Storyboard.WebApplication.Models.ArticleViewModel
+@{
+    ViewBag.Title = "ViewArticle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View Article</h2>
+
+<div>
+    <h4>Article Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tags)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tags)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArticleDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArticleDesc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

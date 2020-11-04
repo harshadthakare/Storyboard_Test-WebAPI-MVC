@@ -1,0 +1,18 @@
+﻿@model IEnumerable<String>
+@{
+    ViewBag.Title = "AllTags";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AllTags</h2>
+<div class="container">
+
+    @foreach (var item in Model)
+    {
+    <div class="btn btn-default">
+        @Html.DisplayFor(modelItem => item)
+        @Html.ActionLink("View All Articles", "GetArticlesByTags",new { tagName = item })
+    </div>
+    }
+
+</div>
